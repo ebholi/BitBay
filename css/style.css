@@ -2,87 +2,141 @@
 /* Appearance */
 
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgb(14, 97, 179);
-    padding: 0;
-    margin: 0;
-    height: auto;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(14, 97, 179);
+  padding: 0;
+  margin: 0;
+  height: auto;
+  gap: 20px;
 }
 
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    gap: 20px;
-    background-color: rgb(14, 97, 179);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+  background-color: rgb(14, 97, 179);
 }
 
 body {
-    font-family: 'Trebuchet MS', sans-serif;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(14, 97, 179);
+  padding: 0;
+  margin: 0;
+  height: auto;
+  gap: 20px;
 }
 
 .logo {
-    display: block;
-    width: 174px;
-    height: 140px;
-    clip-path: ellipse(50% 50%);
-    shape-outside: ellipse(50% 50%);
-    border: 5px solid rgb(0, 191, 255);
-    border-radius: 50%;
-    background-color: #fff;
-}
-
-.button.is-info {
-    color: #007FFF;
-    border-color: #007FFF;
-}
-
-.header .button.is-info {
-    background-color: rgb(184, 237, 255);
-    color: rgb(0, 149, 255);
-    border-color: rgb(0, 149, 255);
+  display: block;
+  width: 174px;
+  height: 140px;
+  clip-path: ellipse(50% 50%);
+  shape-outside: ellipse(50% 50%);
+  border: 5px solid rgb(0, 191, 255);
+  border-radius: 50%;
+  background-color: #fff;
 }
 
 /* Text */
 
+h1 {
+  font-weight: bolder;
+  font-size: xx-large;
+}
+
 h2 {
-    font-weight: bold;
-    font-size: xx-large;
+  font-weight: bold;
+  font-size: xx-large;
 }
 
 h3 {
-    font-weight: bold;
-    font-size: x-large;
+  font-weight: bold;
+  font-size: x-large;
 }
 
 h4 {
-    font-weight: bold;
-    font-size: larger;
+  font-weight: bold;
+  font-size: larger;
 }
 
 p {
-    font-size: larger;
+  font-size: larger;
+}
+
+p.small-text {
+  font-size: medium;
+}
+
+label {
+  font-size: larger;
+}
+
+input {
+border-color: #000;
+font-family: 'Trebuchet MS', sans-serif;
+font-size: larger;
 }
 
 /* Grid */
 
-.grid-standard {
-  height: 100%;
+.same-height-grid {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+height: 100%;
+}
+
+.grid-list {
+max-width: 50%;
+margin: 0 auto;
+}
+
+/* Buttons */
+
+.button.is-info {
+color: #007FFF;
+border-color: #007FFF;
+}
+
+.button.is-register {
+  background-color: rgb(184, 237, 255);
+  color: rgb(0, 149, 255);
+  border-color: rgb(0, 149, 255);
+}
+
+.button.is-subscribe {
+  color: #00ff91;
+  border-color: #00ff91;
+}
+
+.button.is-logo {
+  color: #1f1b4b;
+  border-color: #1f1b4b;
+}
+
+.button.is-down {
+  align-items: flex-end;
 }
 
 /* Shimmering Effect */
 
-.button.is-info {
+.button.is-shimmer {
   position: relative;
   overflow: hidden;
   z-index: 1;
 }
 
-.button.is-info::before {
+.button.is-shimmer::before {
   content: '';
   position: absolute;
   top: 0;
@@ -91,18 +145,56 @@ p {
   height: 100%;
   background: linear-gradient(
     120deg,
-    rgba(0, 127, 255, 0.2) 0%,
-    rgba(144, 184, 255, 0.5) 50%,
-    rgba(0, 127, 255,0.2) 100%
+    rgba(76, 76, 76, 0.1) 0%,
+    rgba(159, 144, 255, 0.5) 50%,
+    rgba(76, 76, 76, 0.1) 100%
   );
   transform: skewX(-25deg);
   z-index: 2;
-  opacity: 0;           /* hide initially */
+  opacity: 0;
   transition: opacity 0.2s ease;
 }
 
-.button.is-info:hover::before {
-  opacity: 1;           /* show on hover */
+.button.is-shimmer.is-register::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(76, 76, 76, 0.1) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(76, 76, 76, 0.1) 100%
+  );
+  transform: skewX(-25deg);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.button.is-shimmer.is-subscribe::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(0, 255, 26, 0.1) 0%,
+    rgba(112, 255, 93, 0.5) 50%,
+    rgba(0, 255, 26, 0.1) 100%
+  );
+  transform: skewX(-25deg);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.button.is-shimmer:hover::before {
+  opacity: 1;
   animation: shimmer 1s forwards;
 }
 
