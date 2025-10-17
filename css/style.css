@@ -60,6 +60,18 @@ html {
   background-color: #000;
 }
 
+.employeePicture {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  clip-path: ellipse(50% 50%);
+  shape-outside: ellipse(50% 50%);
+  border: 5px solid rgb(0, 83, 111);
+  border-radius: 50%;
+  background-color: #fff;
+}
+}
+
 /* Text */
 
 h1 {
